@@ -160,5 +160,25 @@ You see dashboards
 
 Now your cluster is observable 👀
 
+Node Exporter  →  /metrics
+kube-state     →  /metrics
+My App         →  /metrics
+        ↑
+        │
+   Prometheus finds them automatically
+        │
+        ↓
+   Prometheus scrapes every 15 seconds
+        │
+        ↓
+   Stores data
+        │
+        ↓
+   Grafana shows graph
+
+
+
+
+
 
 ```
