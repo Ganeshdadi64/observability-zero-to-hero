@@ -1,0 +1,21 @@
+After creating the Kubernetes cluster
+
+You are installing a complete monitoring system inside your Kubernetes cluster.
+
+Before this:
+
+Your cluster only runs applications.
+
+No monitoring.
+
+No dashboards.
+
+No alerts.
+
+After this:
+
+Prometheus collects metrics.
+
+Grafana shows dashboards.
+
+Alertmanager sends alerts.
