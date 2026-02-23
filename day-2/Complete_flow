@@ -19,3 +19,144 @@ Prometheus collects metrics.
 Grafana shows dashboards.
 
 Alertmanager sends alerts.
+
+```
+🧠 What Happens After Cluster Creation?
+
+When you create a cluster (EKS / K8s):
+
+You only get:
+Control Plane
+Worker Nodes
+System Pods
+
+
+
+There is NO monitoring system by default.
+
+So we install one.
+
+🧰 Step 2 – Add Helm Repo
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+
+What is happening?
+
+You are telling Helm:
+
+“Hey Helm, download monitoring software from this online chart repository.”
+
+Think like:
+
+apt add repository
+
+yum add repo
+
+npm registry
+
+Nothing is installed yet.
+You only connected Helm to chart source.
+
+
+🚀 Step 3 – Create Namespace
+kubectl create ns monitoring
+
+
+What is happening?
+
+Inside your cluster, a new logical folder is created:
+
+Cluster
+│
+├── default
+├── kube-system
+└── monitoring   ← NEW
+
+
+All monitoring tools will go inside this namespace.
+
+🚀 Step 3 – Install Monitoring Stack
+
+helm install monitoring prometheus-community/kube-prometheus-stack \
+-n monitoring \
+-f ./custom_kube_prometheus_stack.yml
+
+Now the real action happens 🔥
+
+🏗 What Happens Internally?
+
+📦 What Gets Created Inside "monitoring" Namespace?
+
+monitoring namespace
+│
+├── Prometheus (StatefulSet)
+├── Grafana (Deployment)
+├── Alertmanager (StatefulSet)
+├── Node Exporter (DaemonSet)
+├── kube-state-metrics
+├── Services
+├── ConfigMaps
+├── Secrets
+
+
+Components:
+
+Prometheus → Collect metrics
+
+Grafana → Dashboards
+
+→ Alerts
+
+
+📊 Architecture Diagram
+
+                Kubernetes Cluster
+                        │
+        ┌────────────────────────────────┐
+        │        monitoring namespace     │
+        │                                │
+        │   Prometheus  ← collects data  │
+        │   Grafana     ← shows graphs   │
+        │   Alertmanager← sends alerts   │
+        │   NodeExporter← node metrics   │
+        └────────────────────────────────┘
+
+
+🌐 Accessing UI (Port Forward)
+
+Kubernetes services are internal by default. we cannot access form your system withot port forwarding.
+
+
+To access from your laptop:
+
+Prometheus UI
+kubectl port-forward service/prometheus-operated -n monitoring 9090:9090
+http://localhost:9090
+
+
+Grafana UI
+kubectl port-forward service/monitoring-grafana -n monitoring 8080:80
+http://localhost:8080
+
+Alertmanager UI
+kubectl port-forward service/alertmanager-operated -n monitoring 9093:9093
+http://localhost:9093
+
+🔁 What Monitoring Actually Does After Installation?
+
+Once running:
+
+Node Exporter → sends node CPU/memory metrics
+kube-state-metrics → sends pod/deployment data
+        ↓
+Prometheus → stores metrics in time series DB
+        ↓
+Grafana → reads from Prometheus
+        ↓
+You see dashboards
+
+Now your cluster is observable 👀
+
+
+```
