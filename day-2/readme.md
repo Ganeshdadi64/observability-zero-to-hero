@@ -418,6 +418,31 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm repo update
 ```
 
+```
+🧰 Step 2: Install kube-prometheus-stack
+
+First understand:
+
+What is kube-prometheus-stack?
+
+kube-prometheus-stack
+It is a Helm chart that installs:
+
+Prometheus → Collect metrics
+
+Grafana → Dashboards
+
+Alertmanager → Alerts
+
+Node Exporter → Node metrics
+
+kube-state-metrics → Kubernetes object metrics
+
+Instead of installing everything manually, this chart installs all at once.
+Now Helm knows where to download monitoring charts from.
+
+```
+
 ### 🚀 Step 3: Deploy the chart into a new namespace "monitoring"
 ```bash
 kubectl create ns monitoring
