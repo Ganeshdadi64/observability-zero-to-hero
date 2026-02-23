@@ -1,3 +1,5 @@
+```
+
 After creating the Kubernetes cluster
 
 You are installing a complete monitoring system inside your Kubernetes cluster.
@@ -20,7 +22,7 @@ Grafana shows dashboards.
 
 Alertmanager sends alerts.
 
-```
+
 🧠 What Happens After Cluster Creation?
 
 When you create a cluster (EKS / K8s):
