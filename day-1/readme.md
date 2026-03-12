@@ -1,17 +1,34 @@
-# Observability
+# Observability Zero to Hero
+
+## Overview
+The observability course aims to equip professionals with essential skills to understand and implement observability practices in system monitoring and alerting.
 
 ## What Can Be Monitored?
+1. **Metrics**  
+   - System performance metrics (CPU, Memory, Disk)
+   - Application performance metrics (Response time, Throughput)
+   - Custom metrics relevant to business needs
 
-1. Performance Metrics
-   - **Response Times:** Measure how long it takes to respond to requests.
-   - **Throughput:** Track the number of requests handled in a time period.
-2. System Resources
-   - **CPU Usage:** Monitor how much CPU is being used.
-   - **Memory Usage:** Keep track of memory consumption.
-3. Application Logs
-   - Log errors and important events for troubleshooting.
-4. User Behavior
-   - Analyze how users interact with your app.
+2. **Logs**  
+   - Application logs (for debugging and tracing)
+   - System logs (OS-level logs)
+   - Audit logs (for compliance and security)
+
+3. **Traces**  
+   - Distributed tracing information
+   - Performance bottleneck analysis
+   - Dependency graphs
+
+## Tools for Observability
+- **Prometheus** - Metrics collection and monitoring.
+- **Grafana** - Visualization and analysis of metrics.
+- **Elasticsearch** - Log storage and search capabilities.
+- **Jaeger** - Distributed context propagation.
+
+## Best Practices
+- Ensure proper labeling of metrics.
+- Keep logs structured for better analysis.
+- Implement tracing to resolve performance issues efficiently.
 
 ## Conclusion
-Monitoring is crucial for maintaining the reliability and performance of applications.
+Continuous improvement in observability practices leads to higher application reliability and better user experiences.
