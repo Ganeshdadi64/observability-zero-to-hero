@@ -80,32 +80,10 @@ Fixes the heavy process
 
 ## 🖥️ What Can Be Monitored?
 - Infrastructure: CPU utilization (%)CPU load average (1m, 5m, 15m), Memory usage,Memory swap usage,Disk usage %,Disk I/O read/write speed,Disk latency,File system inode usage,Network traffic (inbound/outbound),Network errors / dropped packets,System uptime,Process count,Container resource usage (CPU/memory per container),Node health status
-- Applications: API response time
-
-API request rate (requests/sec)
-
-Error rate (4xx / 5xx errors)
-
-Application latency
-
-Throughput
-
-Failed login attempts
-
-Queue length (message queues)
-
-Thread pool usage
-
-Garbage collection time (Java apps)
-
-Application restart count
-
-Dependency service latency
-
-Cache hit/miss ratio
-- Databases: Query performance, connection pool usage, transaction rates.
-- Network: Latency, packet loss, bandwidth usage.
-- Security: Unauthorized access attempts, vulnerability scans, firewall logs.
+- Applications: API response time,API request rate (requests/sec),Error rate (4xx / 5xx errors),Application latency,Throughput,Failed login attempts,Queue length (message queues),Thread pool usage,Garbage collection time (Java apps),Application restart count,Dependency service latency,Cache hit/miss ratio
+- Databases: Query execution time, slow query count, database CPU usage, connection pool usage, active connections, deadlocks, transaction rate, replication lag, cache hit ratio, index usage, lock wait time, database disk usage, failed queries
+- Network: Network latency, packet loss, bandwidth utilization, network throughput, connection errors, DNS resolution time, TCP retransmissions, load balancer response time, SSL handshake time, HTTP request distribution, CDN performance
+- Security: Unauthorized login attempts, brute force attempts, firewall denied requests, suspicious IP addresses, vulnerability scan results, malware detection, privilege escalation attempts, API abuse attempts, configuration change events, certificate expiration alerts, IAM access logs, audit logs
 
 ## 👀 What Can Be Observed?
 - Logs: Detailed records of events and transactions within the system.
