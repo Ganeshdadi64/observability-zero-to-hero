@@ -80,7 +80,29 @@ Fixes the heavy process
 
 ## 🖥️ What Can Be Monitored?
 - Infrastructure: CPU utilization (%)CPU load average (1m, 5m, 15m), Memory usage,Memory swap usage,Disk usage %,Disk I/O read/write speed,Disk latency,File system inode usage,Network traffic (inbound/outbound),Network errors / dropped packets,System uptime,Process count,Container resource usage (CPU/memory per container),Node health status
-- Applications: Response times, error rates, throughput.
+- Applications: API response time
+
+API request rate (requests/sec)
+
+Error rate (4xx / 5xx errors)
+
+Application latency
+
+Throughput
+
+Failed login attempts
+
+Queue length (message queues)
+
+Thread pool usage
+
+Garbage collection time (Java apps)
+
+Application restart count
+
+Dependency service latency
+
+Cache hit/miss ratio
 - Databases: Query performance, connection pool usage, transaction rates.
 - Network: Latency, packet loss, bandwidth usage.
 - Security: Unauthorized access attempts, vulnerability scans, firewall logs.
