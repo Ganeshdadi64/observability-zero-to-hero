@@ -15,6 +15,34 @@
 - Perpose:  maintaining the **health, performance, and security** of IT environments.
 - It enables early detection of issues, ensuring that they can be addressed before causing significant downtime or data loss.
 
+- Without Monitoring ❌
+
+CPU usage on the server slowly increases.
+
+Nobody notices the problem.
+
+After some time, the server crashes.
+
+Customers cannot open the website.
+
+Company loses sales and user trust.
+
+With Monitoring ✅
+
+DevOps engineers use tools like Prometheus + Grafana to monitor system metrics.
+
+Monitoring checks CPU usage, memory, disk, response time every few seconds.
+
+CPU usage becomes 85%.
+
+Monitoring tool sends an alert to DevOps engineer.
+
+Engineer quickly:
+
+Adds another server (auto-scaling)
+
+Fixes the heavy process
+
 - We use monitoring to:
     - Detect Problems Early
     - Measure Performance:
