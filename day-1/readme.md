@@ -79,7 +79,9 @@ Fixes the heavy process
 - observability provides a comprehensive understanding of the system by collecting and analyzing a wider range of data, including **logs, metrics, and traces**.
 
 ## 🖥️ What Can Be Monitored?
-- Infrastructure: CPU usage, memory usage, disk I/O, network traffic.
+- Infrastructure: CPU utilization (%)CPU load average (1m, 5m, 15m), Memory usage,Memory swap usage,Disk usage %,Disk I/O read/write speed,Disk latency,File system inode usage,Network traffic (inbound/outbound),Network errors / dropped packets,System uptime,Process count,Container resource usage (CPU/memory per container)
+
+Node health status
 - Applications: Response times, error rates, throughput.
 - Databases: Query performance, connection pool usage, transaction rates.
 - Network: Latency, packet loss, bandwidth usage.
